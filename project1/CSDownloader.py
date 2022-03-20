@@ -33,7 +33,7 @@ for i in range(3, len(parts)):
 
 # read into body until body_byte_length body size is reached.
 while len(image_stream) < body_byte_length:
-    image_stream.extend(clientSocket.recv(4096))
+    image_stream.extend(clientSocket.recv(body_byte_length - len(image_stream)))
 
 # read to file
 with open(filename, "wb") as binary_file:
@@ -42,3 +42,5 @@ with open(filename, "wb") as binary_file:
 #close socket
 clientSocket.close()
 
+
+#%%

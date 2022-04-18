@@ -1,6 +1,6 @@
 from socket import *
 serverName = 'localhost'
-serverPort = 12000
+serverPort = 8888
 clientSocket = socket(AF_INET, SOCK_DGRAM)
 message = bytearray(65508)
 clientSocket.sendto(message,(serverName, serverPort))
